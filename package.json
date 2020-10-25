@@ -2,9 +2,40 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
+    "npm:install": "npm install",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
+  },
+  "endpoint": {
+    "encoded": "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=GEN%20%3D%20%27COBURG%27%20OR%20GEN%20%3D%20%27SCHWEINFURT%27%20OR%20GEN%20%3D%20%27HA%C3%9FBERGE%27%20OR%20GEN%20%3D%20%27LICHTENFELS%27%20OR%20GEN%20%3D%20%27KRONACH%27%20OR%20GEN%20%3D%20%27SONNEBERG%27%20OR%20GEN%20%3D%20%27HILDBURGHAUSEN%27%20OR%20GEN%20%3D%20%27BAMBERG%27",
+    "url": "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?",
+    "params": "outFields=*&returnGeometry=false&f=json&outSR=4326&where=",
+    "comment": "GEN = 'SCHWEINFURT' OR ",
+    "Xlocations": [
+      "Coburg",
+      "Schweinfurt",
+      "Haßberge",
+      "Lichtenfels",
+      "Kronach",
+      "Sonneberg",
+      "Hildburghausen",
+      "Bamberg"
+    ],
+    "locations": [
+      "Treptow-Köpenick",
+      "Mitte",
+      "Friedrichshain-Kreuzberg",
+      "Pankow",
+      "Lichtenberg",
+      "Marzahn-Hellersdorf",
+      "Charlottenburg-Wilmersdorf",
+      "Steglitz-Zehlendorf",
+      "Tempelhof-Schöneberg",
+      "Neukölln",
+      "Reinickendorf",
+      "Spandau"
+    ]
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",

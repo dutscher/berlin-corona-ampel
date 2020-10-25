@@ -23,18 +23,18 @@
       "Bamberg"
     ],
     "locations": [
-      "Treptow-Köpenick",
-      "Mitte",
-      "Friedrichshain-Kreuzberg",
-      "Pankow",
-      "Lichtenberg",
-      "Marzahn-Hellersdorf",
-      "Charlottenburg-Wilmersdorf",
-      "Steglitz-Zehlendorf",
-      "Tempelhof-Schöneberg",
-      "Neukölln",
-      "Reinickendorf",
-      "Spandau"
+      "Berlin Treptow-Köpenick",
+      "Berlin Mitte",
+      "Berlin Friedrichshain-Kreuzberg",
+      "Berlin Pankow",
+      "Berlin Lichtenberg",
+      "Berlin Marzahn-Hellersdorf",
+      "Berlin Charlottenburg-Wilmersdorf",
+      "Berlin Steglitz-Zehlendorf",
+      "Berlin Tempelhof-Schöneberg",
+      "Berlin Neukölln",
+      "Berlin Reinickendorf",
+      "Berlin Spandau"
     ]
   },
   "devDependencies": {

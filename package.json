@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "corona berlin",
   "version": "1.0.0",
   "scripts": {
     "npm:install": "npm install",
@@ -50,7 +50,6 @@
   "dependencies": {
     "sirv-cli": "^1.0.0"
   },
-  "description": "*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*",
   "main": "rollup.config.js",
   "keywords": [],
   "author": "",

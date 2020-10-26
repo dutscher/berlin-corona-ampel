@@ -116,6 +116,7 @@
       <center>
         Crafted with ❤️from
         <a href="https://www.andre-bellmann.de/?utm_source=social-media&utm_medium=corona&utm_campaign=website">Andre Bellmann</a>
+        & <a href="https://www.github.com/dutscher">Willy Woitas</a>
       </center>
     </div>
   </div>

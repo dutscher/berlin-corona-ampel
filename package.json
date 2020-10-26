@@ -1,5 +1,5 @@
 {
-  "name": "corona berlin",
+  "name": "corona-berlin",
   "version": "1.0.0",
   "scripts": {
     "npm:install": "npm install",

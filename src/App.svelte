@@ -1,19 +1,12 @@
 <script>
-  import { fix_and_outro_and_destroy_block } from 'svelte/internal';
   import Card from './Card.svelte';
   import Header from './Header.svelte';
 
   export let data;
   let sortedData = [];
+  // do some sorting?
   data.forEach((element) => {
-    // SORT COBURG TO THE TOP
-    const city = element.attributes.GEN.toLowerCase();
-    const coburg = 'coburg';
-    if (city.includes(coburg)) {
-      sortedData.unshift(element);
-    } else {
-      sortedData.push(element);
-    }
+    sortedData.push(element);
   });
 </script>
 
@@ -49,7 +42,7 @@
       <p>
         Um die weitere Ausbreitung des Corona-Virus eindämmen und einen zweiten Lockdown zu
         verhindern, wird
-        <strong>in Bayern die Corona-Ampel eingeführt.&nbsp;</strong>
+        <strong>in Bayern die Corona-Ampel eingeführt.nbsp;</strong>
       </p>
       <p>
         <strong>Alle Regeln gelten für die Regionen als MUSS-Regeln. </strong>Nicht wie
@@ -121,7 +114,7 @@
         </li>
       </ul>
       <center>
-        Crafted with ❤️ from
+        Crafted with ❤️from
         <a href="https://www.andre-bellmann.de/?utm_source=social-media&utm_medium=corona&utm_campaign=website">Andre Bellmann</a>
       </center>
     </div>

@@ -5,8 +5,8 @@
   "description": "\uD83D\uDEA6 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen",
   "keywords": ["Inzidenz", "Ampel", "Corona", "Berliner Bezirke", "Warnung", "Info"],
   "author": "Andre Bellmann & Willy Woitas",
-  "url": "https://dutscher.github.io/berlinCorona/",
-  "urlGithub": "https://dutscher.github.io/berlinCorona/",
+  "url": "https://github.com/dutscher/berlin-corona-ampel/",
+  "urlGithub": "https://www.github.com/dutscher",
   "version": "1.0.0",
   "scripts": {
     "npm:install": "npm install",

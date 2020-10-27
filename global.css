@@ -1,6 +1,6 @@
 :root {
 	--body-bg: #292F36;
-	--header-bg: #3B424B;
+	--header-bg: #3b424b;
 	--color: #FFFAFB;
 	--danger-bg: #F63E02;
 	--danger-contrast: #4a190d;
@@ -8,8 +8,8 @@
 	--warning-contrast: #443604;
 	--info-bg: #4E8D26;
 	--info-contrast: #0c2f08;
-	--card-bg: var(--warning-bg);
-	--card-color: var(--warning-contrast);
+	--card-bg: var(--body-bg);
+	--card-color: #77838b;
 }
 
 html, body {
@@ -42,6 +42,11 @@ a {
 .info {
 	--card-bg: var(--info-bg);
 	--card-color: var(--info-contrast);
+}
+
+.warning {
+	--card-bg: var(--warning-bg);
+	--card-color: var(--warning-contrast);
 }
 
 .danger {

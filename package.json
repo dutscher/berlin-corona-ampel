@@ -6,6 +6,7 @@
   "keywords": ["Inzidenz", "Ampel", "Corona", "Berliner Bezirke", "Warnung", "Info"],
   "author": "Andre Bellmann & Willy Woitas",
   "url": "https://dutscher.github.io/berlinCorona/",
+  "urlGithub": "https://dutscher.github.io/berlinCorona/",
   "version": "1.0.0",
   "scripts": {
     "npm:install": "npm install",

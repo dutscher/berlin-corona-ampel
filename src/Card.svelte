@@ -77,6 +77,7 @@
   .card__cases {
     text-align: center;
     font-size: 0.5rem;
+    width: 100%;
   }
 </style>
 

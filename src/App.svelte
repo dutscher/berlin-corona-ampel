@@ -66,6 +66,20 @@
                     });
         }
 
+        if (_sortBy === 'active') {
+            sortedData = data
+                    .map((entry) => entry.attributes)
+                    .sort((a, b) => {
+                        if (a.cases > b.cases) {
+                            return -1;
+                        }
+                        if (a.cases < b.cases) {
+                            return 1;
+                        }
+                        return 0;
+                    });
+        }
+
         return sortedData;
     };
 
@@ -106,9 +120,10 @@
     <Header/>
 
     <center class="sorter">
-        <button on:click={() => sortBy = 'abc'} class={sortBy === 'abc' ? 'active' : ''}>abc</button>
-        <button on:click={() => sortBy = 'hot'} class={sortBy === 'hot' ? 'active' : ''}>red</button>
-        <button on:click={() => sortBy = 'safe'} class={sortBy === 'safe' ? 'active' : ''}>green</button>
+        <button on:click={() => sortBy = 'abc'} class={sortBy === 'abc' ? 'active' : ''}>ABC</button>
+        <button on:click={() => sortBy = 'hot'} class={sortBy === 'hot' ? 'active' : ''}>Rot</button>
+        <button on:click={() => sortBy = 'safe'} class={sortBy === 'safe' ? 'active' : ''}>Grün</button>
+        <button on:click={() => sortBy = 'active'} class={sortBy === 'active' ? 'active' : ''}>Aktive Fälle</button>
     </center>
 
     <div class="card-wrapper container">

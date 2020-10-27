@@ -1,4 +1,5 @@
 <script>
+  import { city } from '../package.json';
   export let data;
   let warningclass = 'warning';
 
@@ -80,7 +81,7 @@
     </div>
     <div class="card__column">
       <div class="card__area">{data.BEZ}</div>
-      <div class="card__city">{data.GEN}</div>
+      <div class="card__city">{data.GEN.replace(city + '', '')}</div>
     </div>
   </div>
   <div class="card__row">

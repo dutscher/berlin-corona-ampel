@@ -1,5 +1,11 @@
 {
   "name": "corona-berlin",
+  "title": "Berlin: aktuelle 7 Tage Corona Inzidenz",
+  "shortTitle": "\uD83D\uDEA6 Corona-Ampel für Berlin \uD83D\uDEA6",
+  "description": "\uD83D\uDEA6 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen",
+  "keywords": ["Inzidenz", "Ampel", "Corona", "Berliner Bezirke", "Warnung", "Info"],
+  "author": "Andre Bellmann & Willy Woitas",
+  "url": "https://dutscher.github.io/berlinCorona/",
   "version": "1.0.0",
   "scripts": {
     "npm:install": "npm install",
@@ -39,7 +45,5 @@
     "sirv-cli": "^1.0.0"
   },
   "main": "rollup.config.js",
-  "keywords": [],
-  "author": "",
   "license": "ISC"
 }

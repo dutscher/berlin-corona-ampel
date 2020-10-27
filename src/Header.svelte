@@ -1,4 +1,5 @@
 <script>
+  import {shortTitle, description} from '../package.json';
 </script>
 
 <style>
@@ -48,7 +49,7 @@
 
 <header>
   <div class="wrapper container">
-    <h1>🚦 Corona-Ampel für Berlin 🚦</h1>
-    <h2>7-Tage Inzidenz pro 100.000 Einwohner in Berliner Bezirke:</h2>
+    <h1>{shortTitle}</h1>
+    <h2>{description}</h2>
   </div>
 </header>

@@ -1,11 +1,17 @@
+<script>
+import {title, description, keywords, author} from '../package.json';
+</script>
+
 <svelte:head>
     <html lang="de">
 
     <meta charset='utf-8'>
+    <title>{title}</title>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
-    <meta name="description" content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen">
-    <meta name="keywords" content="Inzidenz, Ampel, Corona, Berliner Bezirke, Warnung, Info">
-    <meta name="author" content="Andre Bellmann & Willy Woitas">
+    <meta name="description" content="{description}">
+    <meta name="keywords" content="{keywords.join(', ')}">
+    <meta name="author" content="{author}">
+
     <link rel="apple-touch-icon" sizes="57x57" href="./apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./apple-icon-72x72.png">
@@ -25,15 +31,15 @@
 
     <!-- Open Graph -->
     <meta property="og:image" content="https://ingomc.github.io/coburg19/android-icon-192x192.png" />
-    <meta property="og:title" content="Berlin: aktuelle 7 Tage Corona Inzidenz" />
-    <meta property="og:description" content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen" />
-    <meta property="og:url" content="https://dutscher.github.io/berlinCorona/" />
+    <meta property="og:title" content="{title}" />
+    <meta property="og:description" content="{description}" />
+    <meta property="og:url" content="{url}" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="Coburg: aktuelle 7 Tage Corona Inzidenz"/>
+    <meta name="twitter:card" content="{title}"/>
     <meta name="twitter:url" content="http://www.website.com/article-name"/>
-    <meta name="twitter:title" content="Coburg: aktuelle 7 Tage Corona Inzidenz"/>
-    <meta name="twitter:description" content="🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen"/>
+    <meta name="twitter:title" content="{title}"/>
+    <meta name="twitter:description" content="{description}"/>
     <meta name="twitter:image" content="https://ingomc.github.io/coburg19/android-icon-192x192.png"/>
     <meta name=”twitter:creator” value=”@ingomc” />
 
@@ -41,8 +47,6 @@
     <meta name="msapplication-TileColor" content="#292F36">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#292F36">
-
-    <title>Berlin: aktuelle 7 Tage Corona Inzidenz</title>
 
     <link rel='icon' type='image/png' href='./favicon.png'>
 </svelte:head>

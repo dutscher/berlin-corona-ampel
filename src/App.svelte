@@ -1,5 +1,6 @@
 <script>
   import Card from './Card.svelte';
+  import Head from './Head.svelte';
   import Header from './Header.svelte';
 
   export let data;
@@ -22,6 +23,8 @@
     padding: 1rem;
   }
 </style>
+
+<Head />
 
 <main>
   <Header />

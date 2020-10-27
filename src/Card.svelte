@@ -1,9 +1,10 @@
 <script>
   import { city } from '../package.json';
   export let data;
+  export let hmrUnit;
   let warningclass = 'warning';
 
-  if (data.cases7_per_100k < 35) {
+  if (data.cases7_per_100k <= 35) {
     warningclass = 'info';
   }
 
@@ -14,14 +15,13 @@
 
 <style>
   .card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
     padding: 1rem;
     border-radius: 4px;
-    margin: 0.5rem;
     overflow: hidden;
     width: 100%;
-    background-color: var(--card-bg);
-    color: var(--card-color);
     user-select: none;
   }
 
@@ -38,9 +38,16 @@
   }
 
   .card__row {
+    background-color: var(--card-bg);
+    color: var(--card-color);
     display: flex;
     align-items: center;
     padding: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .card__row--full {
+    flex-grow: 1;
   }
 
   .card__column {
@@ -51,7 +58,9 @@
     font-size: 2rem;
     margin: 0;
     padding: 0;
+    padding-right: 1rem;
     font-weight: 500;
+    text-align: right;
   }
 
   .card__area {
@@ -65,17 +74,14 @@
     overflow: hidden;
   }
 
-  .card__update {
-    font-size: 0.5rem;
-  }
-
   .card__cases {
+    text-align: center;
     font-size: 0.5rem;
   }
 </style>
 
-<div class={`card ${warningclass}`}>
-  <div class="card__row">
+<div class='card'>
+  <div class={`card__row card__row--full ${warningclass}`}>
     <div class="card__column">
       <h3 class="card__number">{Number(data.cases7_per_100k).toFixed(2)}</h3>
     </div>
@@ -84,11 +90,8 @@
     </div>
   </div>
   <div class="card__row">
-    <div class="card__column">
-      <div class="card__update">Stand: {data.last_update}</div>
-    </div>
-    <div class="card__column">
-      <div class="card__cases">Fälle insgesamt: {data.cases}</div>
+    <div class="card__cases">
+        Einwohner: <strong>{hmrUnit(data.EWZ)}</strong> | Fälle insgesamt: <strong>{hmrUnit(data.cases)}</strong> | Tode: <strong>{hmrUnit(data.deaths)}</strong>
     </div>
   </div>
 </div>

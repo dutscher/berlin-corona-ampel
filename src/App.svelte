@@ -6,84 +6,62 @@
     import Social from './Social.svelte';
 
     export let data;
-    let sortBy = 'package';
+    data = data.map((entry, index) => entry.attributes);
 
-    function sortDataBy(_sortBy) {
+    let sortBy = 'package';
+    let sortDir = 'down';
+
+    let allEwz = 0;
+    let allCases = 0;
+    let allDeaths = 0;
+
+    const sorters = [
+        { index: 'GEN', label: 'ABC' },
+        { index: 'EWZ', label: 'Einwohner' },
+        { index: 'cases7_per_100k', label: 'Inzidenz' },
+        { index: 'cases', label: 'Aktive Fälle' },
+        { index: 'deaths', label: 'Tode' },
+    ];
+
+    function hmrUnit(number){
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function sortDataBy(_sortBy, _sortDir) {
         let sortedData = [];
+        let searchParam = 'GEN';
 
         if (_sortBy === 'package') {
             // sort list like in package.json
             endpoint.locations.forEach((location) => {
-                data.map((entry) => entry.attributes)
-                        .forEach((element) => {
-                            if (element.GEN === location) {
-                                sortedData.push(element);
-                            }
-                        });
+                data.forEach((element) => {
+                    if (element[searchParam] === location) {
+                        allEwz += element.EWZ;
+                        allCases += element.cases;
+                        allDeaths += element.deaths;
+                        sortedData.push(element);
+                    }
+                });
             });
+            return sortedData;
         }
 
-        if (_sortBy === 'abc') {
-            sortedData = data
-                    .map((entry) => entry.attributes)
-                    .sort((a, b) => {
-                        if (a.GEN < b.GEN) {
-                            return -1;
-                        }
-                        if (a.GEN > b.GEN) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-        }
+        searchParam = _sortBy;
 
-        if (_sortBy === 'hot') {
-            sortedData = data
-                    .map((entry) => entry.attributes)
-                    .sort((a, b) => {
-                        if (a.cases7_per_100k > b.cases7_per_100k) {
-                            return -1;
-                        }
-                        if (a.cases7_per_100k < b.cases7_per_100k) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-        }
-
-
-        if (_sortBy === 'safe') {
-            sortedData = data
-                    .map((entry) => entry.attributes)
-                    .sort((a, b) => {
-                        if (a.cases7_per_100k < b.cases7_per_100k) {
-                            return -1;
-                        }
-                        if (a.cases7_per_100k > b.cases7_per_100k) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-        }
-
-        if (_sortBy === 'active') {
-            sortedData = data
-                    .map((entry) => entry.attributes)
-                    .sort((a, b) => {
-                        if (a.cases > b.cases) {
-                            return -1;
-                        }
-                        if (a.cases < b.cases) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-        }
+        sortedData = data.sort((a, b) => {
+            if (a[searchParam] < b[searchParam]) {
+                return _sortDir === 'up' ? -1 : 1;
+            }
+            if (a[searchParam] > b[searchParam]) {
+                return _sortDir === 'up' ? 1 : -1;
+            }
+            return 0;
+        });
 
         return sortedData;
-    };
+    }
 
-    $: sortedData = sortDataBy(sortBy);
+    $: sortedData = sortDataBy(sortBy, sortDir);
 </script>
 
 <style>
@@ -120,25 +98,31 @@
     <Header/>
 
     <center class="sorter">
-        <button on:click={() => sortBy = 'abc'} class={sortBy === 'abc' ? 'active' : ''}>ABC</button>
-        <button on:click={() => sortBy = 'hot'} class={sortBy === 'hot' ? 'active' : ''}>Rot</button>
-        <button on:click={() => sortBy = 'safe'} class={sortBy === 'safe' ? 'active' : ''}>Grün</button>
-        <button on:click={() => sortBy = 'active'} class={sortBy === 'active' ? 'active' : ''}>Aktive Fälle</button>
+        {#each sorters as sorter}
+            <button
+                    on:click={function() {
+                    sortDir = sortBy !== sorter.index ? 'down' : sortDir === 'down' ? 'up' : 'down';
+                    sortBy = sorter.index;
+                }}
+                    class={sortBy === sorter.index ? 'active' : ''}>
+                {@html sorter.label} {@html sortBy === sorter.index ? sortDir === 'down' ? '&#8615;' : '&#8613' : ''}
+            </button>
+        {/each}
+        <br/>
+        <small>Stand: <strong>{sortedData[0].last_update}</strong> | Einwohner: <strong>{hmrUnit(allEwz)}</strong> | Fälle insgesamt: <strong>{hmrUnit(allCases)}</strong> | Tode: <strong>{hmrUnit(allDeaths)}</strong></small>
     </center>
 
     <div class="card-wrapper container">
-        {#each sortedData as itemData}
-            <Card data={itemData}/>
+        {#each sortedData as itemData (itemData.OBJECTID)}
+            <Card data={itemData} hmrUnit={hmrUnit}/>
         {/each}
     </div>
 
     <div class="container">
         <!-- Social sharing -->
-        <p>
         <center>
             <Social/>
         </center>
-        </p>
 
         <div class="content">
             <p>

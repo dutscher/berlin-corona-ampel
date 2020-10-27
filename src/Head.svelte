@@ -3,11 +3,11 @@ import {title, description, keywords, author, url} from '../package.json';
 </script>
 
 <svelte:head>
-    <html lang="de">
+    <html lang="de" />
 
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <title>{title}</title>
-    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="{description}">
     <meta name="keywords" content="{keywords.join(', ')}">
     <meta name="author" content="{author}">
@@ -48,5 +48,5 @@ import {title, description, keywords, author, url} from '../package.json';
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#292F36">
 
-    <link rel='icon' type='image/png' href='./favicon.png'>
+    <link rel="icon" type="image/png" href="./favicon.png">
 </svelte:head>

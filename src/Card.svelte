@@ -80,7 +80,6 @@
       <h3 class="card__number">{Number(data.cases7_per_100k).toFixed(2)}</h3>
     </div>
     <div class="card__column">
-      <div class="card__area">{data.BEZ}</div>
       <div class="card__city">{data.GEN.replace(city + '', '')}</div>
     </div>
   </div>

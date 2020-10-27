@@ -6,18 +6,85 @@
     import Social from './Social.svelte';
 
     export let data;
-    let sortedData = [];
-    // sort list like in package.json
-    endpoint.locations.forEach((location) => {
-        data.forEach((element) => {
-            if (element.attributes.GEN === location) {
-                sortedData.push(element);
-            }
-        });
-    });
+    let sortBy = 'package';
+
+    function sortDataBy(_sortBy) {
+        let sortedData = [];
+
+        if (_sortBy === 'package') {
+            // sort list like in package.json
+            endpoint.locations.forEach((location) => {
+                data.map((entry) => entry.attributes)
+                        .forEach((element) => {
+                            if (element.GEN === location) {
+                                sortedData.push(element);
+                            }
+                        });
+            });
+        }
+
+        if (_sortBy === 'abc') {
+            sortedData = data
+                    .map((entry) => entry.attributes)
+                    .sort((a, b) => {
+                        if (a.GEN < b.GEN) {
+                            return -1;
+                        }
+                        if (a.GEN > b.GEN) {
+                            return 1;
+                        }
+                        return 0;
+                    });
+        }
+
+        if (_sortBy === 'hot') {
+            sortedData = data
+                    .map((entry) => entry.attributes)
+                    .sort((a, b) => {
+                        if (a.cases7_per_100k > b.cases7_per_100k) {
+                            return -1;
+                        }
+                        if (a.cases7_per_100k < b.cases7_per_100k) {
+                            return 1;
+                        }
+                        return 0;
+                    });
+        }
+
+
+        if (_sortBy === 'safe') {
+            sortedData = data
+                    .map((entry) => entry.attributes)
+                    .sort((a, b) => {
+                        if (a.cases7_per_100k < b.cases7_per_100k) {
+                            return -1;
+                        }
+                        if (a.cases7_per_100k > b.cases7_per_100k) {
+                            return 1;
+                        }
+                        return 0;
+                    });
+        }
+
+        return sortedData;
+    };
+
+    $: sortedData = sortDataBy(sortBy);
 </script>
 
 <style>
+    .sorter {
+        padding: 1rem;
+    }
+
+    .sorter button {
+        cursor: pointer;
+    }
+
+    .sorter .active {
+        color: red;
+    }
+
     .card-wrapper {
         display: flex;
         flex-flow: row wrap;
@@ -37,9 +104,16 @@
 
 <main>
     <Header/>
+
+    <center class="sorter">
+        <button on:click={() => sortBy = 'abc'} class={sortBy === 'abc' ? 'active' : ''}>abc</button>
+        <button on:click={() => sortBy = 'hot'} class={sortBy === 'hot' ? 'active' : ''}>red</button>
+        <button on:click={() => sortBy = 'safe'} class={sortBy === 'safe' ? 'active' : ''}>green</button>
+    </center>
+
     <div class="card-wrapper container">
         {#each sortedData as itemData}
-            <Card data={itemData.attributes}/>
+            <Card data={itemData}/>
         {/each}
     </div>
 
@@ -47,7 +121,7 @@
         <!-- Social sharing -->
         <p>
         <center>
-            <Social />
+            <Social/>
         </center>
         </p>
 
@@ -137,8 +211,9 @@
                 Crafted with ❤️from
                 <a href="https://www.andre-bellmann.de/?utm_source=social-media&utm_medium=corona&utm_campaign=website">Andre
                     Bellmann</a>
-                & <a href="{urlGithub}">Willy Woitas</a><br />
-                <a href="https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=GEN%20=%20'BERLIN%20TREPTOW-K%C3%96PENICK'%20OR%20GEN%20=%20'BERLIN%20MITTE'%20OR%20GEN%20=%20'BERLIN%20FRIEDRICHSHAIN-KREUZBERG'%20OR%20GEN%20=%20'BERLIN%20PANKOW'%20OR%20GEN%20=%20'BERLIN%20LICHTENBERG'%20OR%20GEN%20=%20'BERLIN%20MARZAHN-HELLERSDORF'%20OR%20GEN%20=%20'BERLIN%20CHARLOTTENBURG-WILMERSDORF'%20OR%20GEN%20=%20'BERLIN%20STEGLITZ-ZEHLENDORF'%20OR%20GEN%20=%20'BERLIN%20TEMPELHOF-SCH%C3%96NEBERG'%20OR%20GEN%20=%20'BERLIN%20NEUK%C3%96LLN'%20OR%20GEN%20=%20'BERLIN%20REINICKENDORF'%20OR%20GEN%20=%20'BERLIN%20SPANDAU'">Corona Daten basierend auf API von ARCGIS/RKI_LANDKREISE</a>
+                & <a href="{urlGithub}">Willy Woitas</a><br/>
+                <a href="https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=GEN%20=%20'BERLIN%20TREPTOW-K%C3%96PENICK'%20OR%20GEN%20=%20'BERLIN%20MITTE'%20OR%20GEN%20=%20'BERLIN%20FRIEDRICHSHAIN-KREUZBERG'%20OR%20GEN%20=%20'BERLIN%20PANKOW'%20OR%20GEN%20=%20'BERLIN%20LICHTENBERG'%20OR%20GEN%20=%20'BERLIN%20MARZAHN-HELLERSDORF'%20OR%20GEN%20=%20'BERLIN%20CHARLOTTENBURG-WILMERSDORF'%20OR%20GEN%20=%20'BERLIN%20STEGLITZ-ZEHLENDORF'%20OR%20GEN%20=%20'BERLIN%20TEMPELHOF-SCH%C3%96NEBERG'%20OR%20GEN%20=%20'BERLIN%20NEUK%C3%96LLN'%20OR%20GEN%20=%20'BERLIN%20REINICKENDORF'%20OR%20GEN%20=%20'BERLIN%20SPANDAU'">Corona
+                    Daten basierend auf API von ARCGIS/RKI_LANDKREISE</a>
             </center>
         </div>
     </div>

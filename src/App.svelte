@@ -1,5 +1,5 @@
 <script>
-    import { endpoints } from '../package.json';
+    import { endpoint, url } from '../package.json';
     import Card from './Card.svelte';
     import Head from './Head.svelte';
     import Header from './Header.svelte';
@@ -7,7 +7,7 @@
     export let data;
     let sortedData = [];
     // sort list like in package.json
-    endpoints.locations.forEach((location) => {
+    endpoint.locations.forEach((location) => {
         data.forEach((element) => {
             if(element.GEN === location){
                 sortedData.push(element);
@@ -127,7 +127,7 @@
                 Crafted with ❤️from
                 <a href="https://www.andre-bellmann.de/?utm_source=social-media&utm_medium=corona&utm_campaign=website">Andre
                     Bellmann</a>
-                & <a href="https://www.github.com/dutscher">Willy Woitas</a>
+                & <a href="{url}">Willy Woitas</a>
             </center>
         </div>
     </div>

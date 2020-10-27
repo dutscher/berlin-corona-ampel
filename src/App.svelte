@@ -22,8 +22,10 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        align-items: center;
-        padding: 1rem 0;
+        padding: 1rem;
+        align-items: stretch;
+        justify-items: center;
+        flex-wrap: wrap;
     }
 
     .content {

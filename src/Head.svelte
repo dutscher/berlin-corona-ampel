@@ -3,9 +3,6 @@ import {title, description, keywords, author, url} from '../package.json';
 </script>
 
 <svelte:head>
-    <html lang="de" />
-
-    <meta charset="utf-8">
     <title>{title}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="{description}">
@@ -47,6 +44,28 @@ import {title, description, keywords, author, url} from '../package.json';
     <meta name="msapplication-TileColor" content="#292F36">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#292F36">
+
+    <!-- Cookie-Free Tracking -->
+    <script type="text/javascript">
+        var siteID = '4';
+        var _paq = (window._paq = window._paq || []);
+        _paq.push(['disableCookies']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = '//tracking.andre-bellmann.de/';
+            _paq.push(['setTrackerUrl', u + 'phpfortr.php']);
+            _paq.push(['setSiteId', siteID]);
+            var d = document,
+                    g = d.createElement('script'),
+                    s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.crossorigin = 'anonymous';
+            g.src = u + 'jsfortr.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
 
     <link rel="icon" type="image/png" href="./favicon.png">
 </svelte:head>

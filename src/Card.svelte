@@ -17,7 +17,7 @@
     display: block;
     padding: 1rem;
     border-radius: 4px;
-    margin: 0.5rem 1rem;
+    margin: 0.5rem;
     overflow: hidden;
     width: 100%;
     background-color: var(--card-bg);

@@ -3,6 +3,7 @@
     import Card from './Card.svelte';
     import Head from './Head.svelte';
     import Header from './Header.svelte';
+    import Social from './Social.svelte';
 
     export let data;
     let sortedData = [];
@@ -41,6 +42,13 @@
     </div>
 
     <div class="container">
+        <!-- Social sharing -->
+        <p>
+        <center>
+            <Social />
+        </center>
+        </p>
+
         <div class="content">
             <p>
                 Einen Tag nach dem Treffen der&nbsp;<strong>Ministerpräsidenten und Kanzlerin Merkel</strong>&nbsp;hat

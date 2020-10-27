@@ -9,11 +9,11 @@
     // sort list like in package.json
     endpoint.locations.forEach((location) => {
         data.forEach((element) => {
-            if(element.GEN === location){
+            if (element.attributes.GEN === location) {
                 sortedData.push(element);
             }
         });
-    })
+    });
 </script>
 
 <style>

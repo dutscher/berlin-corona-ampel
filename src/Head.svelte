@@ -1,5 +1,5 @@
 <script>
-import {title, description, keywords, author} from '../package.json';
+import {title, description, keywords, author, url} from '../package.json';
 </script>
 
 <svelte:head>

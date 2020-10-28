@@ -20,7 +20,7 @@
         { index: 'EWZ', label: 'Einwohner' },
         { index: 'cases7_per_100k', label: 'Inzidenz' },
         { index: 'cases', label: 'Aktive Fälle' },
-        { index: 'deaths', label: 'Tode' },
+        { index: 'deaths', label: 'Tote' },
     ];
 
     function hmrUnit(number){
@@ -109,7 +109,7 @@
             </button>
         {/each}
         <br/>
-        <small>Stand: <strong>{sortedData[0].last_update}</strong> | Einwohner: <strong>{hmrUnit(allEwz)}</strong> | Fälle insgesamt: <strong>{hmrUnit(allCases)}</strong> | Tode: <strong>{hmrUnit(allDeaths)}</strong></small>
+        <small>Stand: <strong>{sortedData[0].last_update}</strong> | Einwohner: <strong>{hmrUnit(allEwz)}</strong> | Fälle insgesamt: <strong>{hmrUnit(allCases)}</strong> | Tote: <strong>{hmrUnit(allDeaths)}</strong></small>
     </center>
 
     <div class="card-wrapper container">

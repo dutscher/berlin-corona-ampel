@@ -92,7 +92,7 @@
   </div>
   <div class="card__row">
     <div class="card__cases">
-        Einwohner: <strong>{hmrUnit(data.EWZ)}</strong> | Fälle insgesamt: <strong>{hmrUnit(data.cases)}</strong> | Tode: <strong>{hmrUnit(data.deaths)}</strong>
+        Einwohner: <strong>{hmrUnit(data.EWZ)}</strong> | Fälle insgesamt: <strong>{hmrUnit(data.cases)}</strong> | Tote: <strong>{hmrUnit(data.deaths)}</strong>
     </div>
   </div>
 </div>

@@ -68,5 +68,5 @@ fetch(getLocationsEndpoint())
       }));
     }));
 
-    fs.writeFileSync(endFile, JSON.stringify(json));
+    fs.writeFileSync(endFile, JSON.stringify({ 'locations': json }));
   });

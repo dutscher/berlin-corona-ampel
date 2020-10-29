@@ -1,122 +1,124 @@
-[
-  {
-    "id": 406,
-    "name": "Berlin Treptow-Köpenick",
-    "inzidenz": 67.5452553210651,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 266488,
-    "cases": 1113,
-    "deaths": 12,
-    "newCases": 53
-  },
-  {
-    "id": 414,
-    "name": "Berlin Friedrichshain-Kreuzberg",
-    "inzidenz": 198.185486015337,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 282059,
-    "cases": 2987,
-    "deaths": 11,
-    "newCases": 134
-  },
-  {
-    "id": 409,
-    "name": "Berlin Lichtenberg",
-    "inzidenz": 89.3474148581959,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 286522,
-    "cases": 1401,
-    "deaths": 15,
-    "newCases": 58
-  },
-  {
-    "id": 407,
-    "name": "Berlin Pankow",
-    "inzidenz": 105.518093840758,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 398036,
-    "cases": 2280,
-    "deaths": 38,
-    "newCases": 56
-  },
-  {
-    "id": 410,
-    "name": "Berlin Marzahn-Hellersdorf",
-    "inzidenz": 65.0271707096328,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 262967,
-    "cases": 1124,
-    "deaths": 9,
-    "newCases": 40
-  },
-  {
-    "id": 415,
-    "name": "Berlin Tempelhof-Schöneberg",
-    "inzidenz": 140.444506864225,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 341772,
-    "cases": 3001,
-    "deaths": 29,
-    "newCases": 93
-  },
-  {
-    "id": 404,
-    "name": "Berlin Reinickendorf",
-    "inzidenz": 145.943802009327,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 259689,
-    "cases": 2087,
-    "deaths": 24,
-    "newCases": 82
-  },
-  {
-    "id": 411,
-    "name": "Berlin Spandau",
-    "inzidenz": 141.411352235596,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 239019,
-    "cases": 1593,
-    "deaths": 9,
-    "newCases": 105
-  },
-  {
-    "id": 413,
-    "name": "Berlin Mitte",
-    "inzidenz": 199.073654587222,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 375238,
-    "cases": 4663,
-    "deaths": 21,
-    "newCases": 215
-  },
-  {
-    "id": 408,
-    "name": "Berlin Neukölln",
-    "inzidenz": 223.590337658779,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 321123,
-    "cases": 4370,
-    "deaths": 46,
-    "newCases": 155
-  },
-  {
-    "id": 412,
-    "name": "Berlin Steglitz-Zehlendorf",
-    "inzidenz": 137.336726488118,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 302177,
-    "cases": 1908,
-    "deaths": 15,
-    "newCases": 92
-  },
-  {
-    "id": 405,
-    "name": "Berlin Charlottenburg-Wilmersdorf",
-    "inzidenz": 139.652692426159,
-    "date": "29.10.2020, 00:00 Uhr",
-    "population": 334401,
-    "cases": 2698,
-    "deaths": 24,
-    "newCases": 78
-  }
-]
+{
+  "locations": [
+    {
+      "id": 406,
+      "name": "Berlin Treptow-Köpenick",
+      "inzidenz": 67.5452553210651,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 266488,
+      "cases": 1113,
+      "deaths": 12,
+      "newCases": 53
+    },
+    {
+      "id": 414,
+      "name": "Berlin Friedrichshain-Kreuzberg",
+      "inzidenz": 198.185486015337,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 282059,
+      "cases": 2987,
+      "deaths": 11,
+      "newCases": 134
+    },
+    {
+      "id": 409,
+      "name": "Berlin Lichtenberg",
+      "inzidenz": 89.3474148581959,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 286522,
+      "cases": 1401,
+      "deaths": 15,
+      "newCases": 58
+    },
+    {
+      "id": 407,
+      "name": "Berlin Pankow",
+      "inzidenz": 105.518093840758,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 398036,
+      "cases": 2280,
+      "deaths": 38,
+      "newCases": 56
+    },
+    {
+      "id": 410,
+      "name": "Berlin Marzahn-Hellersdorf",
+      "inzidenz": 65.0271707096328,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 262967,
+      "cases": 1124,
+      "deaths": 9,
+      "newCases": 40
+    },
+    {
+      "id": 415,
+      "name": "Berlin Tempelhof-Schöneberg",
+      "inzidenz": 140.444506864225,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 341772,
+      "cases": 3001,
+      "deaths": 29,
+      "newCases": 93
+    },
+    {
+      "id": 404,
+      "name": "Berlin Reinickendorf",
+      "inzidenz": 145.943802009327,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 259689,
+      "cases": 2087,
+      "deaths": 24,
+      "newCases": 82
+    },
+    {
+      "id": 411,
+      "name": "Berlin Spandau",
+      "inzidenz": 141.411352235596,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 239019,
+      "cases": 1593,
+      "deaths": 9,
+      "newCases": 105
+    },
+    {
+      "id": 413,
+      "name": "Berlin Mitte",
+      "inzidenz": 199.073654587222,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 375238,
+      "cases": 4663,
+      "deaths": 21,
+      "newCases": 215
+    },
+    {
+      "id": 408,
+      "name": "Berlin Neukölln",
+      "inzidenz": 223.590337658779,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 321123,
+      "cases": 4370,
+      "deaths": 46,
+      "newCases": 155
+    },
+    {
+      "id": 412,
+      "name": "Berlin Steglitz-Zehlendorf",
+      "inzidenz": 137.336726488118,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 302177,
+      "cases": 1908,
+      "deaths": 15,
+      "newCases": 92
+    },
+    {
+      "id": 405,
+      "name": "Berlin Charlottenburg-Wilmersdorf",
+      "inzidenz": 139.652692426159,
+      "date": "29.10.2020, 00:00 Uhr",
+      "population": 334401,
+      "cases": 2698,
+      "deaths": 24,
+      "newCases": 78
+    }
+  ]
+}

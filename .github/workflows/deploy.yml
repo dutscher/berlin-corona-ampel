@@ -34,7 +34,7 @@ jobs:
         uses: MerthinTechnologies/edit-json-action@v1
         with:
           filename: ./data.json
-          key: fields
+          key: locations
           value: ''
 
       - name: Parse Data

@@ -5,7 +5,7 @@
     import Header from './Header.svelte';
     import Social from './Social.svelte';
 
-    export let locations;
+    export let data;
 
     let sortBy = 'name';
     let sortDir = 'down';
@@ -29,11 +29,13 @@
 
     function sortDataBy(_sortBy, _sortDir) {
         let sortedData = [];
-        let searchParam = 'GEN';
+        let searchParam = 'name';
 
         searchParam = _sortBy;
 
-        sortedData = locations.sort((a, b) => {
+        console.log('data', data)
+
+        sortedData = data.locations.sort((a, b) => {
             if (a[searchParam] < b[searchParam]) {
                 return _sortDir === 'up' ? -1 : 1;
             }
@@ -94,7 +96,12 @@
             </button>
         {/each}
         <br/>
-        <small>Stand: <strong>{sortedData[0].date}</strong> | Einwohner: <strong>{hmrUnit(allEwz)}</strong> | Fälle insgesamt: <strong>{hmrUnit(allCases)}</strong> | Tote: <strong>{hmrUnit(allDeaths)}</strong></small>
+        <small>
+            Stand: <strong>{data.date}</strong> |
+            Einwohner: <strong>{hmrUnit(data.population)}</strong> |
+            Fälle: <strong>{hmrUnit(data.cases)}</strong> |
+            Neue Fälle: <strong>{hmrUnit(data.newCases)}</strong> |
+            Tote: <strong>{hmrUnit(data.deaths)}</strong></small>
     </center>
 
     <div class="card-wrapper container">

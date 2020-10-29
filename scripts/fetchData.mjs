@@ -38,14 +38,28 @@ const getNewCasesEndpoint = (data) => {
 ]
 */
 
-let json = [];
+let json = {
+  date: '',
+  population: 0,
+  cases: 0,
+  deaths: 0,
+  newCases: 0,
+  locations: []
+};
 
 const handleLocation = async (location) => {
   const newCases = await fetch(getNewCasesEndpoint(location))
     .then((res) => res.json())
     .then((_json) => _json.features[0].attributes.value);
 
-  json.push({
+  json.date = location.last_update;
+
+  json.population += location.EWZ;
+  json.cases += location.cases;
+  json.deaths += location.deaths;
+  json.newCases += newCases;
+
+  json.locations.push({
     id: location.OBJECTID,
     name: location.GEN,
     incidence: location.cases7_per_100k,
@@ -68,5 +82,5 @@ fetch(getLocationsEndpoint())
       }));
     }));
 
-    fs.writeFileSync(endFile, JSON.stringify({ 'locations': json }));
+    fs.writeFileSync(endFile, JSON.stringify(json));
   });

@@ -1,38 +1,30 @@
 {
   "name": "berlin-corona-ampel",
   "title": "Berlin: aktuelle 7 Tage Corona Inzidenz",
-  "shortTitle": "\uD83D\uDEA6 Corona-Ampel für Berlin \uD83D\uDEA6",
-  "description": "\uD83D\uDEA6 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen",
-  "keywords": ["Inzidenz", "Ampel", "Corona", "Berliner Bezirke", "Warnung", "Info"],
+  "shortTitle": "🚦 Corona-Ampel für Berlin 🚦",
+  "description": "🚦 Aktuelle 7 Tage-Inzidenz pro 100.000 Einwohner für Berliner Bezirke!  ⚠️ Alle aktuelle Zahlen",
+  "keywords": [
+    "Inzidenz",
+    "Ampel",
+    "Corona",
+    "Berliner Bezirke",
+    "Warnung",
+    "Info"
+  ],
   "author": "Andre Bellmann & Willy Woitas",
   "url": "https://github.com/dutscher/berlin-corona-ampel/",
   "urlGithub": "https://www.github.com/dutscher",
   "version": "1.0.0",
   "scripts": {
     "npm:install": "npm install",
+    "parse": "node --experimental-json-modules ./scripts/fetchData.mjs",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
-  "city": "Berlin",
-  "endpoint": {
-    "url": "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?",
-    "params": "outFields=*&returnGeometry=false&f=json&outSR=4326&where=",
-    "locations": [
-      "Berlin Treptow-Köpenick",
-      "Berlin Mitte",
-      "Berlin Friedrichshain-Kreuzberg",
-      "Berlin Pankow",
-      "Berlin Lichtenberg",
-      "Berlin Marzahn-Hellersdorf",
-      "Berlin Charlottenburg-Wilmersdorf",
-      "Berlin Steglitz-Zehlendorf",
-      "Berlin Tempelhof-Schöneberg",
-      "Berlin Neukölln",
-      "Berlin Reinickendorf",
-      "Berlin Spandau"
-    ],
-    "newCasesUrl": "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true"
+  "dependencies": {
+    "svelte": "^3.0.0",
+    "sirv-cli": "^1.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
@@ -42,10 +34,7 @@
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^6.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0"
-  },
-  "dependencies": {
-    "sirv-cli": "^1.0.0"
+    "node-fetch": "^2.6.1"
   },
   "main": "rollup.config.js",
   "license": "ISC"

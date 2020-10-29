@@ -1,12 +1,11 @@
 <script>
-    import { endpoint, urlGithub } from '../package.json';
+    import { urlGithub } from '../package.json';
     import Card from './Card.svelte';
     import Head from './Head.svelte';
     import Header from './Header.svelte';
     import Social from './Social.svelte';
 
-    export let data;
-    data = data.map((entry, index) => entry.attributes);
+    export let locations;
 
     let sortBy = 'package';
     let sortDir = 'down';
@@ -16,9 +15,9 @@
     let allDeaths = 0;
 
     const sorters = [
-        { index: 'GEN', label: 'ABC' },
-        { index: 'EWZ', label: 'Einwohner' },
-        { index: 'cases7_per_100k', label: 'Inzidenz' },
+        { index: 'name', label: 'ABC' },
+        { index: 'population', label: 'Einwohner' },
+        { index: 'inzidenz', label: 'Inzidenz' },
         { index: 'cases', label: 'Fälle' },
         { index: 'newCases', label: 'Neue Fälle' },
         { index: 'deaths', label: 'Tote' },
@@ -32,24 +31,9 @@
         let sortedData = [];
         let searchParam = 'GEN';
 
-        if (_sortBy === 'package') {
-            // sort list like in package.json
-            endpoint.locations.forEach((location) => {
-                data.forEach((element) => {
-                    if (element[searchParam] === location) {
-                        allEwz += element.EWZ;
-                        allCases += element.cases;
-                        allDeaths += element.deaths;
-                        sortedData.push(element);
-                    }
-                });
-            });
-            return sortedData;
-        }
-
         searchParam = _sortBy;
 
-        sortedData = data.sort((a, b) => {
+        sortedData = locations.sort((a, b) => {
             if (a[searchParam] < b[searchParam]) {
                 return _sortDir === 'up' ? -1 : 1;
             }
@@ -110,12 +94,12 @@
             </button>
         {/each}
         <br/>
-        <small>Stand: <strong>{sortedData[0].last_update}</strong> | Einwohner: <strong>{hmrUnit(allEwz)}</strong> | Fälle insgesamt: <strong>{hmrUnit(allCases)}</strong> | Tote: <strong>{hmrUnit(allDeaths)}</strong></small>
+        <small>Stand: <strong>{sortedData[0].date}</strong> | Einwohner: <strong>{hmrUnit(allEwz)}</strong> | Fälle insgesamt: <strong>{hmrUnit(allCases)}</strong> | Tote: <strong>{hmrUnit(allDeaths)}</strong></small>
     </center>
 
     <div class="card-wrapper container">
-        {#each sortedData as itemData (itemData.OBJECTID)}
-            <Card data={itemData} hmrUnit={hmrUnit} onNewCases={(number) => itemData.newCases = number}/>
+        {#each sortedData as location (location.id)}
+            <Card location={location} hmrUnit={hmrUnit}/>
         {/each}
     </div>
 

@@ -7,7 +7,7 @@
 
     export let locations;
 
-    let sortBy = 'package';
+    let sortBy = 'name';
     let sortDir = 'down';
 
     let allEwz = 0;

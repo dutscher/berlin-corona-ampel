@@ -33,7 +33,7 @@ jobs:
       - name: Modify json
         uses: MerthinTechnologies/edit-json-action@v1
         with:
-          filename: fetch-api-data-action/data.json
+          filename: ./data.json
           key: fields
           value: ''
 

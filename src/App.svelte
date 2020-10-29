@@ -17,7 +17,7 @@
     const sorters = [
         { index: 'name', label: 'ABC' },
         { index: 'population', label: 'Einwohner' },
-        { index: 'inzidenz', label: 'Inzidenz' },
+        { index: 'incidence', label: 'Inzidenz' },
         { index: 'cases', label: 'Fälle' },
         { index: 'newCases', label: 'Neue Fälle' },
         { index: 'deaths', label: 'Tote' },

@@ -6,6 +6,8 @@
 	--danger-contrast: #4a190d;
 	--warning-bg: #F3B700;
 	--warning-contrast: #443604;
+	--superdanger-bg: #421000;
+	--superdanger-contrast: #ff3200;
 	--info-bg: #4E8D26;
 	--info-contrast: #0c2f08;
 	--card-bg: var(--body-bg);
@@ -52,6 +54,11 @@ a {
 .danger {
 	--card-bg: var(--danger-bg);
 	--card-color: var(--danger-contrast);
+}
+
+.superdanger {
+	--card-bg: var(--superdanger-bg);
+	--card-color: var(--superdanger-contrast);
 }
 
 small {

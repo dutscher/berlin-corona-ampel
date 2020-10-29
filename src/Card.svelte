@@ -1,16 +1,43 @@
 <script>
-  import { city } from '../package.json';
+  import { onMount } from 'svelte';
+  import { city, endpoint } from '../package.json';
   export let data;
-  export let hmrUnit;
+  export let hmrUnit = () => {};
+  export let onNewCases = () => {};
+  const nc = "Neue Fälle:";
   let warningclass = 'warning';
 
   if (data.cases7_per_100k <= 35) {
     warningclass = 'info';
   }
 
-  if (data.cases7_per_100k >= 50) {
+  if (data.cases7_per_100k >= 50 && data.cases7_per_100k < 100) {
     warningclass = 'danger';
   }
+
+  if (data.cases7_per_100k >= 100) {
+    warningclass = 'superdanger';
+  }
+
+  const apiURL = endpoint.newCasesUrl.replace('${data.RS}', data.RS);
+
+  let promise = getNewCases();
+  async function getNewCases() {
+    const res = await fetch(apiURL);
+    const json = await res.json();
+    const resp =  json.features[0].attributes.value;
+    if (res.ok ) {
+      // add to global data for outside sorting
+      onNewCases(resp);
+      return resp == null ? 0 : resp;
+    } else {
+      throw new Error(json);
+    }
+  }
+
+  onMount(async function () {
+    promise = getNewCases();
+  });
 </script>
 
 <style>
@@ -63,9 +90,10 @@
     text-align: right;
   }
 
-  .card__area {
-    font-size: 0.7rem;
+  .card__number--small {
+    font-size: 0.5rem;
   }
+
 
   .card__city {
     font-size: 1.4rem;
@@ -84,7 +112,17 @@
 <div class='card'>
   <div class={`card__row card__row--full ${warningclass}`}>
     <div class="card__column">
-      <h3 class="card__number">{Number(data.cases7_per_100k).toFixed(2)}</h3>
+      <h3 class="card__number">
+        {Number(data.cases7_per_100k).toFixed(2).replace('\.', ',')}
+      </h3>
+      <h4 class="card__number card__number--small">
+        {#await promise}
+          {nc} ...
+          {:then number}
+          {nc} {number}
+          {:catch error}...
+        {/await}
+      </h4>
     </div>
     <div class="card__column">
       <div class="card__city">{data.GEN.replace(city + '', '')}</div>

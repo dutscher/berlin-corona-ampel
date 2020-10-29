@@ -19,7 +19,8 @@
         { index: 'GEN', label: 'ABC' },
         { index: 'EWZ', label: 'Einwohner' },
         { index: 'cases7_per_100k', label: 'Inzidenz' },
-        { index: 'cases', label: 'Aktive Fälle' },
+        { index: 'cases', label: 'Fälle' },
+        { index: 'newCases', label: 'Neue Fälle' },
         { index: 'deaths', label: 'Tote' },
     ];
 
@@ -114,7 +115,7 @@
 
     <div class="card-wrapper container">
         {#each sortedData as itemData (itemData.OBJECTID)}
-            <Card data={itemData} hmrUnit={hmrUnit}/>
+            <Card data={itemData} hmrUnit={hmrUnit} onNewCases={(number) => itemData.newCases = number}/>
         {/each}
     </div>
 

@@ -6,15 +6,15 @@
     };
     let warningclass = 'warning';
 
-    if (location.inzidenz <= 35) {
+    if (location.incidence <= 35) {
         warningclass = 'info';
     }
 
-    if (location.inzidenz >= 50 && location.inzidenz < 100) {
+    if (location.incidence >= 50 && location.incidence < 100) {
         warningclass = 'danger';
     }
 
-    if (location.inzidenz >= 100) {
+    if (location.incidence >= 100) {
         warningclass = 'superdanger';
     }
 </script>
@@ -92,7 +92,7 @@
     <div class={`card__row card__row--full ${warningclass}`}>
         <div class="card__column">
             <h3 class="card__number">
-                {Number(location.inzidenz).toFixed(2).replace('\.', ',')}
+                {Number(location.incidence).toFixed(2).replace('\.', ',')}
             </h3>
             <h4 class="card__number card__number--small">
                 Neue Fälle: {location.newCases}

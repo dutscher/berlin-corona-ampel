@@ -2,6 +2,7 @@ import data from '../locations.json';
 import fetch from 'node-fetch';
 import fs from 'fs';
 
+const endFile = './data.json';
 const endpoint = 'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?outFields=*&returnGeometry=false&f=json&outSR=4326&where=';
 const endpointNewCases = 'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_COVID19/FeatureServer/0/query?f=json&where=(NeuerFall%20IN(1%2C%20-1))%20AND%20(IdLandkreis%3D%27${data.RS}%27)&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outStatistics=%5B%7B%22statisticType%22%3A%22sum%22%2C%22onStatisticField%22%3A%22AnzahlFall%22%2C%22outStatisticFieldName%22%3A%22value%22%7D%5D&resultType=standard&cacheHint=true';
 const getLocationsEndpoint = () => {
@@ -47,7 +48,7 @@ const handleLocation = async (location) => {
   json.push({
     id: location.OBJECTID,
     name: location.GEN,
-    inzidenz: location.cases7_per_100k,
+    incidence: location.cases7_per_100k,
     date: location.last_update,
     population: location.EWZ,
     cases: location.cases,
@@ -67,5 +68,5 @@ fetch(getLocationsEndpoint())
       }));
     }));
 
-    fs.writeFileSync('./data.json', JSON.stringify(json));
+    fs.writeFileSync(endFile, JSON.stringify(json));
   });

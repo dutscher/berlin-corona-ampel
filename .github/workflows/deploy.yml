@@ -30,6 +30,13 @@ jobs:
       - name: Install
         run: npm i
 
+      - name: Modify json
+        uses: MerthinTechnologies/edit-json-action@v1
+        with:
+          filename: fetch-api-data-action/data.json
+          key: fields
+          value: ''
+
       - name: Parse Data
         run: npm run parse
 
@@ -41,3 +48,9 @@ jobs:
         with:
           github_token: ${{ secrets.ACTION_ACCESS_TOKEN }}
           publish_dir: ./public
+
+      - name: Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: json-artifact
+          path: ./data.json

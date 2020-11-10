@@ -120,31 +120,30 @@
             <p>
                 Einen Tag nach dem Treffen der&nbsp;<strong>Ministerpräsidenten und Kanzlerin Merkel</strong>&nbsp;hat
                 das bayerische Kabinett unter Leitung von Ministerpräsident Markus Söder die für Bayern
-                geltenden Bestimmungen beschlossen.&nbsp;
+                geltenden Bestimmungen beschlossen.
             </p>
             <div id="intxt-1" class="aditem "/>
             <p>
                 Um die weitere Ausbreitung des Corona-Virus eindämmen und einen zweiten Lockdown zu
                 verhindern, wird
-                <strong>in Bayern die Corona-Ampel eingeführt.nbsp;</strong>
+                <strong>in Bayern die Corona-Ampel eingeführt.</strong>
             </p>
             <p>
-                <strong>Alle Regeln gelten für die Regionen als MUSS-Regeln. </strong>Nicht wie
-                bisher&nbsp;als "Kann-Regeln"
+                <strong>Alle Regeln gelten für die Regionen als MUSS-Regeln.</strong> Nicht wie
+                bisher als "Kann-Regeln"
             </p>
             <p>
-                <strong><span class="darkbluetext"><span
-                        class="greentext">Grün - Inzidenz&nbsp;bis 35&nbsp;</span></span></strong>
+                <span class="greentext"><strong>Grün - Inzidenz bis 35</strong></span>
             </p>
             <ul>
-                <li>Allgemeine AHA + L-Regeln&nbsp;&nbsp;(Abstand, Hygiene, Alltagsmaske und Lüften)</li>
+                <li>Allgemeine AHA + L-Regeln (Abstand, Hygiene, Alltagsmaske und Lüften)</li>
                 <li>
                     Kontaktbeschränkungen: Bis zu 10 Personen oder zwei Haushalte in der Öffentlichkeit
                     treffen ist erlaubt
                 </li>
                 <li>
                     Maskenpflicht im ÖPNV, in Geschäften und im Einzelhandel, sowie in der Gastronomie bis zum
-                    Platz&nbsp;
+                    Platz
                 </li>
                 <li>
                     Empfehlung, aber keine Pflicht: Private Feierlichkeiten mit bis zu 25 Personen sind
@@ -152,49 +151,43 @@
                 </li>
             </ul>
             <p>
-        <span class="yellowtext"><strong><span class="yellowtext"><span class="darkbluetext"><span
-                class="yellowtext">Gelb -</span>&nbsp;</span></span></strong><span
-                class="darkbluetext"><strong><span
-                class="yellowtext">Inzidenz</span></strong></span></span><b
-                    style="background-color: initial;"><span class="darkbluetext"><span
-                    class="yellowtext"><span class="darkbluetext">&nbsp;</span>35 bis 50</span></span></b>
+                <span class="yellowtext"><strong>Gelb - Inzidenz 35 bis 50</strong></span>
             </p>
             <ul>
                 <li>
-                    Maskenpflicht wird ausgeweitet.&nbsp;
+                    Maskenpflicht wird ausgeweitet.
                     <ul>
                         <li>Maskenpflicht auch im Unterricht ab der 5. Klasse</li>
-                        <li>Maskenpflicht an Hochschulen&nbsp;</li>
+                        <li>Maskenpflicht an Hochschulen</li>
                         <li>in öffentlichen Gebäuden</li>
                         <li>
-                            am Arbeitsplatz, wenn der Abstand von 1,5m&nbsp;nicht eingehalten werden kann. Im
+                            am Arbeitsplatz, wenn der Abstand von 1,5m nicht eingehalten werden kann. Im
                             Betrieb, sobald man den Platz verlässt.
                         </li>
                         <li>Öffentlichen Plätzen, die stark frequentiert sind.</li>
                     </ul>
                 </li>
-                <li>Allgemeine Sperrstunde ab 23 Uhr&nbsp;</li>
-                <li>Generelles Alkoholverkaufsverbot&nbsp;an Tankstellen ab 23 Uhr&nbsp;</li>
+                <li>Allgemeine Sperrstunde ab 23 Uhr</li>
+                <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 23 Uhr</li>
                 <li>Auf öffentlichen Plätzen besteht ab 23 Uhr ein Alkoholverbot.</li>
                 <li>
-                    private Feiern und Treffen&nbsp;sind auf zwei Haushalte oder maximal 10 Personen
+                    Private Feiern und Treffen sind auf zwei Haushalte oder maximal 10 Personen
                     beschränkt. Egal ob draußen, daheim oder im Lokal.
                 </li>
             </ul>
             <p>
-                <span class="redtext"><strong>Rot - Inzidenz&nbsp;</strong></span><span
-                    class="redtext"><strong>ab 50</strong></span>
+                <span class="redtext"><strong>Rot - Inzidenz ab 50</strong></span>
             </p>
             <ul>
                 <li>
-                    Maskenpflicht wie bei 35-50 und zusätzlich&nbsp;Maskenpflicht auch in der
-                    Grundschule&nbsp;&nbsp;
+                    Maskenpflicht wie bei 35-50 und zusätzlich Maskenpflicht auch in der
+                    Grundschule
                 </li>
                 <li>Allgemeine Sperrstunde ab 22 Uhr</li>
-                <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 22 Uhr&nbsp;</li>
+                <li>Generelles Alkoholverkaufsverbot an Tankstellen ab 22 Uhr</li>
                 <li>Auf öffentlichen Plätzen besteht ab 22 Uhr ein Alkoholverbot.</li>
                 <li>
-                    private Feiern und Treffen&nbsp;sind auf 5 Personen oder zwei Haushalte&nbsp;beschränkt.
+                    Private Feiern und Treffen sind auf 5 Personen oder zwei Haushalte beschränkt.
                     Egal ob draußen, daheim oder im Lokal.
                 </li>
             </ul>
